@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   
+    <form name="MyForm" method="POST">
+        Enter p:
+        <input id="p"> <br><br>
+        Enter q:
+        <input id="q"> <br><br>
+        Enter a string: 
+        <input type="text" id="word"> <br>
+        <input type="submit" id="submit" value="Submit" onclick="return ValidateForm()">   
+        
+    </form>
+    
+</body>
+
+<script>
+    
+    function ValidateForm(){
+        
+        function gcd(n1, n2) {
+         if ((typeof n1 !== 'number') || (typeof n2 !== 'number')) 
+            return false;
+        n1 = Math.abs(n1);
+        n2 = Math.abs(n2);
+       while(n2) {
+          var temp = n2;
+          n2 = n1 % n2;
+          n1 = temp;
+            }
+       return n1;
+        }
+        
+        function getCharCode(message){
+            var charCodeArr = [];
+            for(var i=0;i<message.length;i++){
+                var t = message.charCodeAt(i);
+                charCodeArr.push(t);
+            }
+            var randomString = charCodeArr.join("");
+            var Num = Number.parseInt(randomString);
+            return Num;
+        }
+
+        var p = document.getElementById("p").value.trim();
+        var q = document.getElementById("q").value.trim();
+        var word = document.getElementById("word").value.trim();   
+        var n = p*q;
+        document.write("n = "+n+"<br>");
+        var phi = (p-1)*(q-1);
+        var e;
+        for(var i=2;i<phi;i++){
+           hcf = gcd(i,phi);
+           if(hcf==1){
+              e = i;
+              break;
+           }
+        }
+         
+        var d = 1;
+        while(((e*d)-1)%20 != 0){
+            d++;
+        }
+      
+       var m = getCharCode(word);
+       document.write("m = "+m+"<br>");  
+       var c = ((Math.pow(m,e))%n);
+       var m_prime = ((Math.pow(c,d))%n);
+       
+       document.write("The ascii value for this word is : "+m+"<br>");
+       document.write("Original Message = "+word+"<br>");
+       document.write("p = "+p+"<br>");
+       document.write("q = "+q+"<br>");
+       document.write("n = "+n+"<br>");
+       document.write("phi = "+phi+"<br>");
+       document.write("e = "+e+"<br>");
+       document.write("d = "+d+"<br>");
+       document.write("Encrypted value = "+c+"<br>");
+       document.write("Decrypted value = "+m_prime+"<br>");
+       document.write(String.fromCharCode(m_prime));
+       document.write("Encrypted message = "+String.fromCharCode(104, 101, 108, 108, 111));
+       
+    }
+    
+    
+    </script>
+</html>
