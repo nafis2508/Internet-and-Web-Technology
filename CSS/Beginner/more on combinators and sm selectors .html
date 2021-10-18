@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Descendant selectors </title>
+</head>
+
+<body>
+    <h1>this is a h1 tag </h1>
+    <style>
+        div+p {
+
+
+            color: blanchedalmond;
+            background-color: black;
+        }
+
+        < !--n adjacent sibling selector -->div p {
+
+
+            color: blanchedalmond;
+            background-color: black;
+        }
+
+        < !-- descendsant selector -->div~p {
+
+
+            color: blanchedalmond;
+            background-color: black;
+        }
+
+    </style>
+    <div>
+
+        <p> this is a paragraph </p>
+        <p> this is a paragraph </p>
+        <p> this is a paragraph </p>
+        <section>this is a child selector</section>
+        <p> this is a paragraph </p>
+    </div>
+
+    <p> This is also a paragraph </p>
+</body>
+
+</html>
