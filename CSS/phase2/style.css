@@ -1,0 +1,17 @@
+body{
+    background-color: grey;
+}
+.container{
+background-color: hotpink;
+width: 400px ;
+margin: 5px ;
+padding: 5px ;
+border: 5px ;
+border-color: black;
+
+}
+#id{
+    
+background-color: aqua ;
+margin-left: 15px;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initiaal-scale=1.0">
+    <title>Form</title>
+    <style>
+        input[type=text] {
+            width: 100%;
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin: 20px 0;
+            border: 3px solid salmon;
+            box-sizing: border-box;
+            border-radius: 5px;
+            /* border:none; border: bottom 3px solid salmon; */
+        }
+
+        input[type=password] {
+            width: 100%;
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin: 20px 0;
+            border: 3px solid salmon;
+            box-sizing: border-box;
+            border-radius: 5px;
+            background-color: antiquewhite;
+        }
+        #search{
+            background-image: url(1x/search.png);
+            background-repeat: no-repeat;
+            font-size: 1rem;
+            padding: 15px 40px;
+            background-position: 8px 15px;
+            background-color: lightblue;
+            width: 150px;
+            transition: width 0.3s ease-in-out ;
+        }
+        #search:focus{
+            background-color: sienna;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <input type="search" placeholder="search.." id="search">
+        <br>
+        <p></p>
+        <label for="fname">First Name</label>
+        <input type="text" name="fname" id="fname">
+
+        <label for="lname">Last Name</label>
+        <input type="text" name="lname" id="lname">
+
+        <label for="password">Password</label>
+        <input type="password" name="pword" id="pword">
+    </form>
+</body>
+
+</html>
