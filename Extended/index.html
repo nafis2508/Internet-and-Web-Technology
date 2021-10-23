@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <header style="color: #005c99;">
+        <h1>North South University</h1>
+        <h2>Registration form</h2>
+        <h3>CSE-482 Sec:04 Lab</h3>
+        <h3>Name:Muntasir Md. Nafis ID:1811108042</h3>
+    </header>
+    <form action="register.html" method="post">
+        Username:
+        <br>
+        <input id="username" type="text" placeholder="Username">
+        <br>
+        <br>
+        Password:
+        <br>
+        <input id="password" type="password" placeholder="Password">
+        <br>
+        <br>
+        Email:
+        <br>
+        <input id="email" type="email" placeholder="Email">
+        <br>
+        <br>
+        Contact No:
+        <br>
+        <input id="contactno" type="text" placeholder="Contact No">
+        <br>
+        <br>
+        <button type="submit" style="background-color:#5c5cd6 ;" onclick="return validateForm()">Submit</button>
+        <button type="reset" style="background-color:#ff4d4d ;">Cancel</button>
+
+
+
+
+    </form>
+    <script type="text/javascript">
+        function validateForm() {
+            var x = document.getElementById("username").value.trim();
+            if (x == "") {
+                alert("Blank is invalid");
+                return false;
+            }
+            if (!x.includes("nsu")) {
+
+                alert("Username must contain nsu");
+                return false;
+
+            } else {
+
+                return CheckPassword();
+            }
+
+
+
+        }
+
+        function CheckPassword() {
+            var password = document.getElementById("password").value.trim();
+            var strings = password.toString();
+            var numeric = 0;
+            var upper = 0;
+            var lower = 0;
+            var character = '';
+            if (password.length < 7 || password.length > 20) {
+                alert("Invalid Password");
+                return false;
+            }
+            for (var i = 0; i < strings.length; i++) {
+                character = strings.charAt(i);
+                if (!isNaN(character * 1)) {
+                    numeric = 1;
+                    continue;
+                }
+                if (character == character.toUpperCase()) {
+                    upper = 1;
+                }
+                if (character == character.toLowerCase()) {
+                    lower = 1;
+                }
+            }
+            if (numeric == 0 || upper == 0 || lower == 0) {
+                alert('password must contain atleast one uppercase one lowercase and one numeric value');
+                return false;
+
+
+            }
+            var passw = /^[A-Za-z0-9]{7,20}$/;
+            if (!password.match(passw)) {
+                alert("Password cannot contain any special character");
+                return false;
+            } else {
+                return CheckEmail();
+
+            }
+
+
+
+        }
+
+        function CheckEmail() {
+            var email = document.getElementById("email").value.trim();
+            var mail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (!email.match(mail)) {
+                alert("Invalid Email Address");
+                return false;
+            } 
+            else 
+            {
+                return CheckContact();
+            }
+        }
+        function CheckContact()
+        {
+            var contact = document.getElementById("contactno").value.trim() ;
+            var s = contact.toString();
+            
+            if(s.length != 11)
+            {
+                alert("Contact No must be of 11 digits") ;
+                return false ;
+            }
+            if(!s.startsWith("01"))
+            {
+                alert("Contact No must start with 01") ;
+                return false ;
+            }
+            if(isNaN(contact))
+            {
+                alert("Contact No must contain numeric input") ;
+                return false;
+            }
+            
+                return true ;
+            }
+        
+    </script>
+
+
+</body>
+
+</html>
