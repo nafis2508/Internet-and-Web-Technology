@@ -1,0 +1,98 @@
+header {
+    background-color: bisque;
+    padding: 10px;
+    color: black;
+}
+
+.image {
+    float: left;
+}
+
+#commonlinks {
+    background-color: #ccff99;
+    text-align: right;
+}
+
+#search-bar {
+    text-align: right;
+    padding top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+nav {
+    background-color: bisque;
+    text-align: left;
+    position: absolute;
+    padding: 10px;
+    width: 100px;
+    height: 50%;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+}
+
+
+section {
+    width: 90%;
+    height: auto;
+    text-align: center;
+
+}
+
+#advertisements {
+    text-align: center;
+    width: 200px;
+    background-color: bisque;
+    color: black;
+    position: absolute;
+    top: 250px;
+    right: 30px;
+}
+
+#advertisements h3 {
+    color: black;
+}
+
+footer {
+    text-align: center;
+    position: relative;
+    top: 70px;
+    background-color: black;
+    color: whitesmoke;
+}
+
+/* Phone View */
+@media only screen and (max-width: 500px) {
+    header {
+        background-color: coral;
+    }
+
+    #commonlinks {
+        width: 100%;
+        text-align: left;
+        background-color: coral;
+    }
+
+    nav {
+        background-color: coral;
+        width: 100px;
+        height: 20%;
+    }
+
+    section {
+        text-align: right;
+        width: 100%;
+        height: auto;
+        padding-top: 30px;
+    }
+
+    footer {
+        text-align: left;
+
+    }
+
+    #advertisements {
+        float: left;
+        position: relative;
+    }
+}
